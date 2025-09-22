@@ -1,0 +1,34 @@
+2025-09-19T17:55:40.6772277Z Container start method called.
+2025-09-19T17:55:40.6833291Z Establishing network.
+2025-09-19T17:55:40.6834808Z Pulling image: appsvc/node:22-lts_20250724.2.tuxprod.
+2025-09-19T17:56:02.6168451Z Image appsvc/node:22-lts_20250724.2.tuxprod is pulled from registry 10.1.0.5:13209
+2025-09-19T17:56:02.6171037Z Container is starting.
+2025-09-19T17:56:02.6172680Z Establishing user namespace if not established already.
+2025-09-19T17:56:02.6175386Z Establishing network if not established already.
+2025-09-19T17:56:02.6177025Z Mounting volumes.
+2025-09-19T17:56:02.6264667Z Nested mountpoint 
+2025-09-19T17:56:02.6745666Z Nested mountpoint volatile/logs
+2025-09-19T17:56:02.6808783Z Nested mountpoint 
+2025-09-19T17:56:02.6909369Z Nested mountpoint 
+2025-09-19T17:56:02.6959757Z Nested mountpoint 
+2025-09-19T17:56:09.1612369Z Creating container.
+2025-09-19T17:56:09.1618363Z Creating pipes for streaming container io.
+2025-09-19T17:56:09.1624546Z Creating stdout named pipe at /podr/container/pipe/5e967d76e65f_iga-historicos/stdout_9638f293395c45f1b256b3465ed53a8e.
+2025-09-19T17:56:09.1664091Z Successfully created stdout named pipe at: /podr/container/pipe/5e967d76e65f_iga-historicos/stdout_9638f293395c45f1b256b3465ed53a8e.
+2025-09-19T17:56:09.1672944Z Opening named pipe /podr/container/pipe/5e967d76e65f_iga-historicos/stdout_9638f293395c45f1b256b3465ed53a8e for reading in non-blocking mode.
+2025-09-19T17:56:09.1682820Z Successfully opened named pipe: /podr/container/pipe/5e967d76e65f_iga-historicos/stdout_9638f293395c45f1b256b3465ed53a8e.
+2025-09-19T17:56:09.1687252Z Successfully removed non-blocking flag from /podr/container/pipe/5e967d76e65f_iga-historicos/stdout_9638f293395c45f1b256b3465ed53a8e.
+2025-09-19T17:56:09.1694226Z Creating stderr named pipe at /podr/container/pipe/5e967d76e65f_iga-historicos/stderr_0db48f4e76b5460bb42ad554e1822a27.
+2025-09-19T17:56:09.1718452Z Successfully created stderr named pipe at: /podr/container/pipe/5e967d76e65f_iga-historicos/stderr_0db48f4e76b5460bb42ad554e1822a27.
+2025-09-19T17:56:09.1738123Z Opening named pipe /podr/container/pipe/5e967d76e65f_iga-historicos/stderr_0db48f4e76b5460bb42ad554e1822a27 for reading in non-blocking mode.
+2025-09-19T17:56:09.1750945Z Successfully opened named pipe: /podr/container/pipe/5e967d76e65f_iga-historicos/stderr_0db48f4e76b5460bb42ad554e1822a27.
+2025-09-19T17:56:09.1759021Z Successfully removed non-blocking flag from /podr/container/pipe/5e967d76e65f_iga-historicos/stderr_0db48f4e76b5460bb42ad554e1822a27.
+2025-09-19T17:56:09.1779048Z Creating container with image: appsvc/node:22-lts_20250724.2.tuxprod from registry: 10.1.0.5:13209 and fully qualified image name: 10.1.0.5:13209/appsvc/node:22-lts_20250724.2.tuxprod
+2025-09-19T17:56:09.4681372Z Starting container: 5e967d76e65f_iga-historicos.
+2025-09-19T17:56:09.5366471Z Starting watchers and probes.
+2025-09-19T17:56:09.5479909Z Starting metrics collection.
+2025-09-19T17:56:09.5522376Z Container is running.
+2025-09-19T17:56:09.6772250Z Container start method finished after 28999 ms.
+2025-09-19T17:56:17.2484359Z Site startup probe succeeded after 7.5458983 seconds.
+2025-09-19T17:56:17.3216955Z Site started.
+2025-09-19T17:56:17.4011114Z Site is running with patch version: 22.17.0

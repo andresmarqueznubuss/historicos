@@ -1,0 +1,163 @@
+2025-09-20T01:25:31.2432272Z,Updating submodules.,0aaa6c8f-275c-463d-8869-e6eb94899832,0
+2025-09-20T01:25:32.3722184Z,Preparing deployment for commit id '936360b1-8'.,bb37ab79-3f23-441e-9100-2b8a66f72d00,0
+2025-09-20T01:25:32.7402596Z,PreDeployment: context.CleanOutputPath False,4ebb10dc-c0dc-4347-8108-2f88c7506f15,0
+2025-09-20T01:25:32.8688029Z,PreDeployment: context.OutputPath /home/site/wwwroot,2d379e75-6384-4d1c-bc32-3825e387154e,0
+2025-09-20T01:25:33.0147222Z,Running build. Project type: OneDeploy,72d15ecd-2ae0-41b7-aaf7-fe03e85dee85,0
+2025-09-20T01:25:33.1671855Z,Copying the manifest,958e5050-901a-4c1e-85cf-32f185149c87,0
+2025-09-20T01:25:33.3901769Z,NodeProjectOptimizer Initialized with repository path: /tmp/zipdeploy/extracted and output path: /home/site/wwwroot ,9819dfb2-2f1d-470e-92e0-9c81df5a10b1,0
+2025-09-20T01:25:33.5344288Z,Optimizing build...,45f4c990-30f0-4b12-b799-b0ce22c6cb5f,0
+2025-09-20T01:25:33.6794380Z,Zipping node_modules...,83034fe0-faf2-4591-ac4c-75f93b9ac39b,0
+	2025-09-20T01:25:33.7212978Z,Command: /opt/Kudu/Scripts/absoluteTar.sh /tmp/zipdeploy/extracted/node_modules /tmp/zipdeploy/extracted/node_modules.tar.gz,,0
+	2025-09-20T01:25:42.9011837Z,Zipped /tmp/zipdeploy/extracted/node_modules to /tmp/zipdeploy/extracted/node_modules.tar.gz done successfully,,0
+2025-09-20T01:25:43.0545359Z,Zipped Node Modules to /tmp/zipdeploy/extracted/node_modules.tar.gz,91b45836-8c36-4318-80b0-af468cb99113,0
+2025-09-20T01:25:43.1916732Z,Express Node Deploy: Running rsync...,60bbdf7c-a827-4d8d-b28c-8a857c9b61e5,0
+	2025-09-20T01:25:43.1965444Z,Command: /opt/Kudu/Scripts/parallel_rsync.sh /tmp/zipdeploy/extracted /home/site/wwwroot 8 /tmp/ False False node_modules ,,0
+	2025-09-20T01:25:43.8795141Z,Run rsync from: /tmp/zipdeploy/extracted/ to: /home/site/wwwroot/ in 8 parallel threads,,0
+	2025-09-20T01:25:43.9396245Z,Delete options: clean=False&comma; use manifest=False&comma; directory to ignore=node_modules,,0
+	2025-09-20T01:25:43.9885464Z,Prev manifest = /home/site/deployments/f4794405-aeab-4e4d-9d62-4d7499e634c4/manifest and next /home/site/deployments/936360b1-833c-4c01-9781-1709f7d47dbc/manifest,,0
+	2025-09-20T01:25:44.0375945Z,Cleaning up /tmp//filelist.txt and /tmp//splits,,0
+	2025-09-20T01:25:44.0986118Z,Creating a list of all files at /tmp//filelist.txt,,0
+	2025-09-20T01:25:44.1461612Z,Excluding: node_modules,,0
+	2025-09-20T01:25:44.2717149Z,Created /tmp//filelist.txt. Total number of files to be synced = 7.,,0
+	2025-09-20T01:25:44.4349304Z,Created batches from the list of files. Processing 1 files in each thread,,0
+	2025-09-20T01:25:44.4564503Z,Running rsync for filelist /tmp//splits/split.ab from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/,,0
+	2025-09-20T01:25:44.4931102Z,Running rsync for filelist /tmp//splits/split.aa from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/,,0
+	2025-09-20T01:25:44.5231751Z,Running rsync for filelist /tmp//splits/split.ad from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/,,0
+	2025-09-20T01:25:44.5636962Z,Running rsync for filelist /tmp//splits/split.ac from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/,,0
+	2025-09-20T01:25:44.6260164Z,Running rsync for filelist /tmp//splits/split.ae from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/,,0
+	2025-09-20T01:25:44.6543071Z,Running rsync for filelist /tmp//splits/split.af from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/,,0
+	2025-09-20T01:25:44.7149490Z,Running rsync for filelist /tmp//splits/split.ag from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/,,0
+	2025-09-20T01:25:44.7701104Z,,,0
+	2025-09-20T01:25:44.8200980Z,Number of files: 1 (reg: 1),,0
+	2025-09-20T01:25:44.8472555Z,Number of created files: 0,,0
+	2025-09-20T01:25:44.8571405Z,Number of deleted files: 0,,0
+	2025-09-20T01:25:44.8889515Z,Number of regular files transferred: 0,,0
+	2025-09-20T01:25:44.9258145Z,Total file size: 6.03K bytes,,0
+	2025-09-20T01:25:44.9397602Z,Total transferred file size: 0 bytes,,0
+	2025-09-20T01:25:44.9869748Z,Literal data: 0 bytes,,0
+	2025-09-20T01:25:45.0134678Z,Matched data: 0 bytes,,0
+	2025-09-20T01:25:45.0214367Z,File list size: 0,,0
+	2025-09-20T01:25:45.0449459Z,File list generation time: 0.001 seconds,,0
+	2025-09-20T01:25:45.0653662Z,File list transfer time: 0.000 seconds,,0
+	2025-09-20T01:25:45.0977784Z,Total bytes sent: 110,,0
+	2025-09-20T01:25:45.1260273Z,Total bytes received: 19,,0
+	2025-09-20T01:25:45.1450381Z,,,0
+	2025-09-20T01:25:45.1632645Z,sent 110 bytes  received 19 bytes  258.00 bytes/sec,,0
+	2025-09-20T01:25:45.1810868Z,total size is 6.03K  speedup is 46.78,,0
+	2025-09-20T01:25:45.1956495Z,Attempt 1: Rsync for filelist /tmp//splits/split.ab completed with exit code 0,,0
+	2025-09-20T01:25:45.2309506Z,,,0
+	2025-09-20T01:25:45.2447526Z,Number of files: 1 (reg: 1),,0
+	2025-09-20T01:25:45.2610192Z,Number of created files: 0,,0
+	2025-09-20T01:25:45.2752953Z,Number of deleted files: 0,,0
+	2025-09-20T01:25:45.3025400Z,Number of regular files transferred: 0,,0
+	2025-09-20T01:25:45.3344260Z,Total file size: 18 bytes,,0
+	2025-09-20T01:25:45.3563191Z,Total transferred file size: 0 bytes,,0
+	2025-09-20T01:25:45.3848610Z,Literal data: 0 bytes,,0
+	2025-09-20T01:25:45.4241433Z,Matched data: 0 bytes,,0
+	2025-09-20T01:25:45.4761735Z,File list size: 0,,0
+	2025-09-20T01:25:45.5022454Z,File list generation time: 0.001 seconds,,0
+	2025-09-20T01:25:45.5233773Z,File list transfer time: 0.000 seconds,,0
+	2025-09-20T01:25:45.5431294Z,Total bytes sent: 111,,0
+	2025-09-20T01:25:45.5645804Z,Total bytes received: 19,,0
+	2025-09-20T01:25:45.5961142Z,,,0
+	2025-09-20T01:25:45.6130282Z,sent 111 bytes  received 19 bytes  260.00 bytes/sec,,0
+	2025-09-20T01:25:45.6234484Z,total size is 18  speedup is 0.14,,0
+	2025-09-20T01:25:45.6361652Z,Attempt 1: Rsync for filelist /tmp//splits/split.ae completed with exit code 0,,0
+	2025-09-20T01:25:45.6737121Z,,,0
+	2025-09-20T01:25:45.6888043Z,Number of files: 1 (reg: 1),,0
+	2025-09-20T01:25:45.7253088Z,Number of created files: 0,,0
+	2025-09-20T01:25:45.7462148Z,Number of deleted files: 0,,0
+	2025-09-20T01:25:45.8126067Z,Number of regular files transferred: 0,,0
+	2025-09-20T01:25:45.8525344Z,Total file size: 376 bytes,,0
+	2025-09-20T01:25:45.8785396Z,Total transferred file size: 0 bytes,,0
+	2025-09-20T01:25:45.8969280Z,Literal data: 0 bytes,,0
+	2025-09-20T01:25:45.9257161Z,Matched data: 0 bytes,,0
+	2025-09-20T01:25:45.9431150Z,File list size: 0,,0
+	2025-09-20T01:25:45.9953420Z,File list generation time: 0.001 seconds,,0
+	2025-09-20T01:25:46.0234870Z,File list transfer time: 0.000 seconds,,0
+	2025-09-20T01:25:46.0495948Z,Total bytes sent: 113,,0
+	2025-09-20T01:25:46.0707847Z,Total bytes received: 19,,0
+	2025-09-20T01:25:46.0996984Z,,,0
+	2025-09-20T01:25:46.1484584Z,sent 113 bytes  received 19 bytes  264.00 bytes/sec,,0
+	2025-09-20T01:25:46.1685630Z,total size is 376  speedup is 2.85,,0
+	2025-09-20T01:25:46.2045835Z,,,0
+	2025-09-20T01:25:46.2177128Z,Number of files: 1 (reg: 1),,0
+	2025-09-20T01:25:46.2284398Z,Number of created files: 0,,0
+	2025-09-20T01:25:46.2436788Z,Number of deleted files: 0,,0
+	2025-09-20T01:25:46.2721253Z,Number of regular files transferred: 0,,0
+	2025-09-20T01:25:46.2898852Z,Total file size: 62.06K bytes,,0
+	2025-09-20T01:25:46.3227935Z,Total transferred file size: 0 bytes,,0
+	2025-09-20T01:25:46.3495987Z,Literal data: 0 bytes,,0
+	2025-09-20T01:25:46.3703591Z,Matched data: 0 bytes,,0
+	2025-09-20T01:25:46.3921696Z,File list size: 0,,0
+	2025-09-20T01:25:46.4181663Z,File list generation time: 0.001 seconds,,0
+	2025-09-20T01:25:46.4454913Z,File list transfer time: 0.000 seconds,,0
+	2025-09-20T01:25:46.4817979Z,Total bytes sent: 118,,0
+	2025-09-20T01:25:46.4915661Z,Total bytes received: 19,,0
+	2025-09-20T01:25:46.4974572Z,,,0
+	2025-09-20T01:25:46.5117514Z,sent 118 bytes  received 19 bytes  274.00 bytes/sec,,0
+	2025-09-20T01:25:46.5259538Z,total size is 62.06K  speedup is 453.02,,0
+	2025-09-20T01:25:46.5428034Z,Attempt 1: Rsync for filelist /tmp//splits/split.ac completed with exit code 0,,0
+	2025-09-20T01:25:46.5715887Z,,,0
+	2025-09-20T01:25:46.6100602Z,Number of files: 1 (reg: 1),,0
+	2025-09-20T01:25:46.6376392Z,Number of created files: 0,,0
+	2025-09-20T01:25:46.6424705Z,Number of deleted files: 0,,0
+	2025-09-20T01:25:46.6570937Z,Number of regular files transferred: 0,,0
+	2025-09-20T01:25:46.6777433Z,Total file size: 208 bytes,,0
+	2025-09-20T01:25:46.7477740Z,Total transferred file size: 0 bytes,,0
+	2025-09-20T01:25:46.7890987Z,Literal data: 0 bytes,,0
+	2025-09-20T01:25:46.8759911Z,Matched data: 0 bytes,,0
+	2025-09-20T01:25:46.9419182Z,File list size: 0,,0
+	2025-09-20T01:25:46.9796774Z,File list generation time: 0.001 seconds,,0
+	2025-09-20T01:25:47.0598886Z,File list transfer time: 0.000 seconds,,0
+	2025-09-20T01:25:47.0743751Z,Total bytes sent: 105,,0
+	2025-09-20T01:25:47.1042645Z,Total bytes received: 19,,0
+	2025-09-20T01:25:47.1422420Z,,,0
+	2025-09-20T01:25:47.1637466Z,sent 105 bytes  received 19 bytes  248.00 bytes/sec,,0
+	2025-09-20T01:25:47.2055569Z,total size is 208  speedup is 1.68,,0
+	2025-09-20T01:25:47.2529973Z,Attempt 1: Rsync for filelist /tmp//splits/split.af completed with exit code 0,,0
+	2025-09-20T01:25:47.2739520Z,Attempt 1: Rsync for filelist /tmp//splits/split.aa completed with exit code 0,,0
+	2025-09-20T01:25:47.3033963Z,,,0
+	2025-09-20T01:25:47.3640076Z,Number of files: 2 (reg: 1&comma; dir: 1),,0
+	2025-09-20T01:25:47.3782929Z,Number of created files: 0,,0
+	2025-09-20T01:25:47.3990091Z,Number of deleted files: 0,,0
+	2025-09-20T01:25:47.4243467Z,Number of regular files transferred: 0,,0
+	2025-09-20T01:25:47.4435693Z,Total file size: 17.51K bytes,,0
+	2025-09-20T01:25:47.4771359Z,Total transferred file size: 0 bytes,,0
+	2025-09-20T01:25:47.5240269Z,Literal data: 0 bytes,,0
+	2025-09-20T01:25:47.5450960Z,Matched data: 0 bytes,,0
+	2025-09-20T01:25:47.6068134Z,File list size: 0,,0
+	2025-09-20T01:25:47.6341435Z,File list generation time: 0.001 seconds,,0
+	2025-09-20T01:25:47.6730875Z,File list transfer time: 0.000 seconds,,0
+	2025-09-20T01:25:47.6841061Z,Total bytes sent: 142,,0
+	2025-09-20T01:25:47.7131021Z,Total bytes received: 22,,0
+	2025-09-20T01:25:47.7347698Z,,,0
+	2025-09-20T01:25:47.7489875Z,sent 142 bytes  received 22 bytes  328.00 bytes/sec,,0
+	2025-09-20T01:25:47.7642633Z,total size is 17.51K  speedup is 106.79,,0
+	2025-09-20T01:25:47.7869512Z,Attempt 1: Rsync for filelist /tmp//splits/split.ag completed with exit code 0,,0
+	2025-09-20T01:25:47.8230579Z,,,0
+	2025-09-20T01:25:47.8434325Z,Number of files: 1 (reg: 1),,0
+	2025-09-20T01:25:47.8597476Z,Number of created files: 0,,0
+	2025-09-20T01:25:47.8787066Z,Number of deleted files: 0,,0
+	2025-09-20T01:25:47.8987883Z,Number of regular files transferred: 1,,0
+	2025-09-20T01:25:47.9187209Z,Total file size: 10.18M bytes,,0
+	2025-09-20T01:25:47.9481258Z,Total transferred file size: 10.18M bytes,,0
+	2025-09-20T01:25:47.9614263Z,Literal data: 10.18M bytes,,0
+	2025-09-20T01:25:47.9873001Z,Matched data: 0 bytes,,0
+	2025-09-20T01:25:48.0550347Z,File list size: 0,,0
+	2025-09-20T01:25:48.0742463Z,File list generation time: 0.001 seconds,,0
+	2025-09-20T01:25:48.1131293Z,File list transfer time: 0.000 seconds,,0
+	2025-09-20T01:25:48.1389886Z,Total bytes sent: 10.17M,,0
+	2025-09-20T01:25:48.1592526Z,Total bytes received: 35,,0
+	2025-09-20T01:25:48.1916608Z,,,0
+	2025-09-20T01:25:48.2172208Z,sent 10.17M bytes  received 35 bytes  6.78M bytes/sec,,0
+	2025-09-20T01:25:48.2272518Z,total size is 10.18M  speedup is 1.00,,0
+	2025-09-20T01:25:48.2645063Z,Attempt 1: Rsync for filelist /tmp//splits/split.ad completed with exit code 0,,0
+	2025-09-20T01:25:48.2779849Z,Completed successfully in 1 seconds,,0
+2025-09-20T01:25:48.4258419Z,Rsync completed to /home/site/wwwroot,9429b229-2d96-44de-8681-cde3ca8b83a9,0
+2025-09-20T01:25:48.6623466Z,Manifest created at /home/site/wwwroot,3fe57349-edd6-45a6-8b04-5b1780e9e071,0
+2025-09-20T01:25:48.8269864Z,Optimized build done with success: True,4f3f649b-aeda-420c-9f0f-49b28b6b831b,0
+2025-09-20T01:25:48.9527906Z,Build completed succesfully.,3bda6fed-ac0d-4faf-8979-18025c5d057b,0
+2025-09-20T01:25:49.1251867Z,Running post deployment command(s)...,2916a5ab-1630-4e2c-8d3e-4c572d95bf27,0
+2025-09-20T01:25:49.2861076Z,Triggering container recycle for OneDeploy by adding/updating restartTrigger.txt to the site root path,d9860083-494c-4d36-84d3-725e2a4cafc7,0
+2025-09-20T01:25:49.4615896Z,Deployment successful. deployer = OneDeploy deploymentPath = OneDeploy,8b671073-d180-4852-8aad-3bff56b50081,0

@@ -1,0 +1,480 @@
+2025-09-20T00:35:26.392474446Z    _____                               
+2025-09-20T00:35:26.481120569Z   /  _  \ __________ _________   ____  
+2025-09-20T00:35:26.481129631Z  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2025-09-20T00:35:26.481133286Z /    |    \/    /|  |  /|  | \/\  ___/ 
+2025-09-20T00:35:26.481136785Z \____|__  /_____ \____/ |__|    \___  >
+2025-09-20T00:35:26.481140858Z         \/      \/                  \/ 
+2025-09-20T00:35:26.481144184Z A P P   S E R V I C E   O N   L I N U X
+2025-09-20T00:35:26.481147417Z 
+2025-09-20T00:35:26.481150526Z Documentation: http://aka.ms/webapp-linux
+2025-09-20T00:35:26.481153818Z NodeJS quickstart: https://aka.ms/node-qs
+2025-09-20T00:35:26.481156932Z NodeJS Version : v20.19.3
+2025-09-20T00:35:26.481160030Z Note: Any data outside '/home' is not persisted
+2025-09-20T00:35:26.481163764Z 
+2025-09-20T00:35:31.628149595Z Starting OpenBSD Secure Shell server: sshd.
+2025-09-20T00:35:31.663847710Z WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2025-09-20T00:35:31.706435837Z Updating certificates in /etc/ssl/certs...
+2025-09-20T00:35:49.704258341Z rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2025-09-20T00:35:49.771296001Z 4 added, 0 removed; done.
+2025-09-20T00:35:49.771326225Z Running hooks in /etc/ca-certificates/update.d...
+2025-09-20T00:35:49.817084694Z done.
+2025-09-20T00:35:49.875192728Z CA certificates copied and updated successfully.
+2025-09-20T00:35:50.128788120Z Starting periodic command scheduler: cron.
+2025-09-20T00:35:50.330838280Z Found build manifest file at '/home/site/wwwroot/oryx-manifest.toml'. Deserializing it...
+2025-09-20T00:35:50.340418171Z Could not find operation ID in manifest. Generating an operation id...
+2025-09-20T00:35:50.348891348Z Build Operation ID: 2778e3e3-7393-4a80-9688-7c213c0900d2
+2025-09-20T00:35:50.732089025Z Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2025-09-20T00:35:50.760749864Z Writing output script to '/opt/startup/startup.sh'
+2025-09-20T00:35:50.841220172Z Running #!/bin/sh
+2025-09-20T00:35:50.841276379Z 
+2025-09-20T00:35:50.841281261Z # Enter the source directory to make sure the script runs where the user expects
+2025-09-20T00:35:50.841285535Z cd "/home/site/wwwroot"
+2025-09-20T00:35:50.841289594Z 
+2025-09-20T00:35:50.841293427Z export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2025-09-20T00:35:50.841297530Z if [ -z "$PORT" ]; then
+2025-09-20T00:35:50.841301779Z 		export PORT=8080
+2025-09-20T00:35:50.841306242Z fi
+2025-09-20T00:35:50.841310124Z 
+2025-09-20T00:35:50.841313965Z echo Found tar.gz based node_modules.
+2025-09-20T00:35:50.841337420Z extractionCommand="tar -xzf node_modules.tar.gz -C /node_modules"
+2025-09-20T00:35:50.841341239Z echo "Removing existing modules directory from root..."
+2025-09-20T00:35:50.841344283Z rm -fr /node_modules
+2025-09-20T00:35:50.841347193Z mkdir -p /node_modules
+2025-09-20T00:35:50.841350061Z echo Extracting modules...
+2025-09-20T00:35:50.841353020Z $extractionCommand
+2025-09-20T00:35:50.841356031Z export NODE_PATH="/node_modules":$NODE_PATH
+2025-09-20T00:35:50.841359113Z export PATH=/node_modules/.bin:$PATH
+2025-09-20T00:35:50.841362065Z if [ -d node_modules ]; then
+2025-09-20T00:35:50.841364997Z     mv -f node_modules _del_node_modules || true
+2025-09-20T00:35:50.841367958Z fi
+2025-09-20T00:35:50.841370773Z 
+2025-09-20T00:35:50.841373562Z if [ -d /node_modules ]; then
+2025-09-20T00:35:50.841376512Z     ln -sfn /node_modules ./node_modules 
+2025-09-20T00:35:50.841379483Z fi
+2025-09-20T00:35:50.841382322Z 
+2025-09-20T00:35:50.841385121Z echo "Done."
+2025-09-20T00:35:50.849631665Z npm start
+2025-09-20T00:35:50.924851259Z Found tar.gz based node_modules.
+2025-09-20T00:35:50.924890850Z Removing existing modules directory from root...
+2025-09-20T00:35:50.954248594Z Extracting modules...
+2025-09-20T00:35:58.641104245Z Done.
+2025-09-20T00:36:00.937370451Z npm info using npm@10.9.2
+2025-09-20T00:36:00.937406758Z npm info using node@v20.19.3
+2025-09-20T00:36:07.660270985Z 
+2025-09-20T00:36:07.660303755Z > historicos@1.0.0 start
+2025-09-20T00:36:07.660316508Z > node server.js
+2025-09-20T00:36:07.660321568Z 
+2025-09-20T00:36:08.343503974Z [dotenv@17.2.2] injecting env (2) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+2025-09-20T00:36:08.343537981Z DB_PASSWORD length: 24
+2025-09-20T00:36:10.630319130Z Database configuration: {
+2025-09-20T00:36:10.630345417Z   "user": "sailpointbr-admin",
+2025-09-20T00:36:10.630364963Z   "server": "sailpointbr-sqlserver.database.windows.net",
+2025-09-20T00:36:10.630370560Z   "database": "sailpointbr-sqldb",
+2025-09-20T00:36:10.630374873Z   "options": {
+2025-09-20T00:36:10.630378924Z     "encrypt": true,
+2025-09-20T00:36:10.630382942Z     "trustServerCertificate": false
+2025-09-20T00:36:10.630387109Z   }
+2025-09-20T00:36:10.630390982Z }
+2025-09-20T00:36:11.183757632Z Connected to SQL Server
+2025-09-20T00:36:11.183828300Z Backend server listening at http://localhost:3000
+
+2025-09-20T00:48:18.352420132Z    _____                               
+2025-09-20T00:48:18.369199803Z   /  _  \ __________ _________   ____  
+2025-09-20T00:48:18.369207068Z  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2025-09-20T00:48:18.369210790Z /    |    \/    /|  |  /|  | \/\  ___/ 
+2025-09-20T00:48:18.369214329Z \____|__  /_____ \____/ |__|    \___  >
+2025-09-20T00:48:18.369218069Z         \/      \/                  \/ 
+2025-09-20T00:48:18.369221522Z A P P   S E R V I C E   O N   L I N U X
+2025-09-20T00:48:18.369224790Z 
+2025-09-20T00:48:18.369227898Z Documentation: http://aka.ms/webapp-linux
+2025-09-20T00:48:18.369231143Z NodeJS quickstart: https://aka.ms/node-qs
+2025-09-20T00:48:18.369234517Z NodeJS Version : v20.19.3
+2025-09-20T00:48:18.369237714Z Note: Any data outside '/home' is not persisted
+2025-09-20T00:48:18.369241084Z 
+2025-09-20T00:48:22.342950931Z Starting OpenBSD Secure Shell server: sshd.
+2025-09-20T00:48:22.365533263Z WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2025-09-20T00:48:22.414423850Z Updating certificates in /etc/ssl/certs...
+2025-09-20T00:48:36.883181113Z rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2025-09-20T00:48:36.960931436Z 4 added, 0 removed; done.
+2025-09-20T00:48:36.960963212Z Running hooks in /etc/ca-certificates/update.d...
+2025-09-20T00:48:36.962919137Z done.
+2025-09-20T00:48:37.001413215Z CA certificates copied and updated successfully.
+2025-09-20T00:48:37.277419900Z Starting periodic command scheduler: cron.
+2025-09-20T00:48:37.375014624Z Found build manifest file at '/home/site/wwwroot/oryx-manifest.toml'. Deserializing it...
+2025-09-20T00:48:37.380825976Z Could not find operation ID in manifest. Generating an operation id...
+2025-09-20T00:48:37.381291155Z Build Operation ID: 380ef154-e1a4-4931-982d-b5728a93a39d
+2025-09-20T00:48:37.670474248Z Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2025-09-20T00:48:37.700044669Z Writing output script to '/opt/startup/startup.sh'
+2025-09-20T00:48:37.777729846Z Running #!/bin/sh
+2025-09-20T00:48:37.777775339Z 
+2025-09-20T00:48:37.777780393Z # Enter the source directory to make sure the script runs where the user expects
+2025-09-20T00:48:37.777784972Z cd "/home/site/wwwroot"
+2025-09-20T00:48:37.777789058Z 
+2025-09-20T00:48:37.777792913Z export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2025-09-20T00:48:37.777797086Z if [ -z "$PORT" ]; then
+2025-09-20T00:48:37.777801087Z 		export PORT=8080
+2025-09-20T00:48:37.777805601Z fi
+2025-09-20T00:48:37.777809473Z 
+2025-09-20T00:48:37.777813634Z echo Found tar.gz based node_modules.
+2025-09-20T00:48:37.777835673Z extractionCommand="tar -xzf node_modules.tar.gz -C /node_modules"
+2025-09-20T00:48:37.777839435Z echo "Removing existing modules directory from root..."
+2025-09-20T00:48:37.777842563Z rm -fr /node_modules
+2025-09-20T00:48:37.777845465Z mkdir -p /node_modules
+2025-09-20T00:48:37.777848346Z echo Extracting modules...
+2025-09-20T00:48:37.777851591Z $extractionCommand
+2025-09-20T00:48:37.777854546Z export NODE_PATH="/node_modules":$NODE_PATH
+2025-09-20T00:48:37.777857631Z export PATH=/node_modules/.bin:$PATH
+2025-09-20T00:48:37.777860568Z if [ -d node_modules ]; then
+2025-09-20T00:48:37.777863575Z     mv -f node_modules _del_node_modules || true
+2025-09-20T00:48:37.777866539Z fi
+2025-09-20T00:48:37.777869344Z 
+2025-09-20T00:48:37.777872123Z if [ -d /node_modules ]; then
+2025-09-20T00:48:37.777875147Z     ln -sfn /node_modules ./node_modules 
+2025-09-20T00:48:37.777878113Z fi
+2025-09-20T00:48:37.777880914Z 
+2025-09-20T00:48:37.777883733Z echo "Done."
+2025-09-20T00:48:37.777886724Z npm start
+2025-09-20T00:48:37.810058984Z Found tar.gz based node_modules.
+2025-09-20T00:48:37.810082429Z Removing existing modules directory from root...
+2025-09-20T00:48:37.810087048Z Extracting modules...
+2025-09-20T00:48:45.496025343Z Done.
+2025-09-20T00:48:47.567748121Z npm info using npm@10.9.2
+2025-09-20T00:48:47.568854777Z npm info using node@v20.19.3
+2025-09-20T00:48:51.828826369Z 
+2025-09-20T00:48:51.828881998Z > historicos@1.0.0 start
+2025-09-20T00:48:51.828887766Z > node server.js
+2025-09-20T00:48:51.828892373Z 
+2025-09-20T00:48:52.309596669Z [dotenv@17.2.2] injecting env (2) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+2025-09-20T00:48:52.311645297Z DB_PASSWORD length: 24
+2025-09-20T00:48:54.830960813Z Database configuration: {
+2025-09-20T00:48:54.830988792Z   "user": "sailpointbr-admin",
+2025-09-20T00:48:54.830994239Z   "server": "sailpointbr-sqlserver.database.windows.net",
+2025-09-20T00:48:54.830998969Z   "database": "sailpointbr-sqldb",
+2025-09-20T00:48:54.831003110Z   "options": {
+2025-09-20T00:48:54.831007316Z     "encrypt": true,
+2025-09-20T00:48:54.831011356Z     "trustServerCertificate": false
+2025-09-20T00:48:54.831015426Z   }
+2025-09-20T00:48:54.831019315Z }
+2025-09-20T00:48:55.447448193Z Connected to SQL Server
+2025-09-20T00:48:55.447481157Z Backend server listening at http://localhost:3000
+
+2025-09-20T00:53:08.718611203Z    _____                               
+2025-09-20T00:53:08.718650141Z   /  _  \ __________ _________   ____  
+2025-09-20T00:53:08.718655094Z  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2025-09-20T00:53:08.718658798Z /    |    \/    /|  |  /|  | \/\  ___/ 
+2025-09-20T00:53:08.718662208Z \____|__  /_____ \____/ |__|    \___  >
+2025-09-20T00:53:08.718665811Z         \/      \/                  \/ 
+2025-09-20T00:53:08.718669364Z A P P   S E R V I C E   O N   L I N U X
+2025-09-20T00:53:08.718672597Z 
+2025-09-20T00:53:08.718675634Z Documentation: http://aka.ms/webapp-linux
+2025-09-20T00:53:08.718678762Z NodeJS quickstart: https://aka.ms/node-qs
+2025-09-20T00:53:08.718681995Z NodeJS Version : v20.19.3
+2025-09-20T00:53:08.718685144Z Note: Any data outside '/home' is not persisted
+2025-09-20T00:53:08.718688393Z 
+2025-09-20T00:53:13.013367150Z Starting OpenBSD Secure Shell server: sshd.
+2025-09-20T00:53:13.013388764Z WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2025-09-20T00:53:13.255176350Z Updating certificates in /etc/ssl/certs...
+2025-09-20T00:53:30.635836435Z 4 added, 0 removed; done.
+2025-09-20T00:53:30.635877593Z Running hooks in /etc/ca-certificates/update.d...
+2025-09-20T00:53:30.635896120Z done.
+2025-09-20T00:53:31.008985795Z CA certificates copied and updated successfully.
+2025-09-20T00:53:31.009036308Z Starting periodic command scheduler: cron.
+2025-09-20T00:53:31.018421318Z rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2025-09-20T00:53:31.657572579Z Found build manifest file at '/home/site/wwwroot/oryx-manifest.toml'. Deserializing it...
+2025-09-20T00:53:31.657601592Z Could not find operation ID in manifest. Generating an operation id...
+2025-09-20T00:53:31.657606854Z Build Operation ID: e5d6a8c4-4bef-4e84-b6a3-b00f90d4e0d9
+2025-09-20T00:53:32.094916212Z Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2025-09-20T00:53:32.094955140Z Writing output script to '/opt/startup/startup.sh'
+2025-09-20T00:53:32.094960315Z Running #!/bin/sh
+2025-09-20T00:53:32.094964579Z 
+2025-09-20T00:53:32.094968536Z # Enter the source directory to make sure the script runs where the user expects
+2025-09-20T00:53:32.094972726Z cd "/home/site/wwwroot"
+2025-09-20T00:53:32.094976721Z 
+2025-09-20T00:53:32.094980651Z export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2025-09-20T00:53:32.094984944Z if [ -z "$PORT" ]; then
+2025-09-20T00:53:32.094989338Z 		export PORT=8080
+2025-09-20T00:53:32.094993615Z fi
+2025-09-20T00:53:32.094997482Z 
+2025-09-20T00:53:32.095001346Z echo Found tar.gz based node_modules.
+2025-09-20T00:53:32.095019461Z extractionCommand="tar -xzf node_modules.tar.gz -C /node_modules"
+2025-09-20T00:53:32.095023001Z echo "Removing existing modules directory from root..."
+2025-09-20T00:53:32.095026097Z rm -fr /node_modules
+2025-09-20T00:53:32.095029050Z mkdir -p /node_modules
+2025-09-20T00:53:32.095031953Z echo Extracting modules...
+2025-09-20T00:53:32.095034849Z $extractionCommand
+2025-09-20T00:53:32.095037823Z export NODE_PATH="/node_modules":$NODE_PATH
+2025-09-20T00:53:32.095040864Z export PATH=/node_modules/.bin:$PATH
+2025-09-20T00:53:32.095043785Z if [ -d node_modules ]; then
+2025-09-20T00:53:32.095046717Z     mv -f node_modules _del_node_modules || true
+2025-09-20T00:53:32.095055992Z fi
+2025-09-20T00:53:32.095058920Z 
+2025-09-20T00:53:32.095062026Z if [ -d /node_modules ]; then
+2025-09-20T00:53:32.095064960Z     ln -sfn /node_modules ./node_modules 
+2025-09-20T00:53:32.095067942Z fi
+2025-09-20T00:53:32.095070777Z 
+2025-09-20T00:53:32.095073690Z echo "Done."
+2025-09-20T00:53:32.095076627Z npm start
+2025-09-20T00:53:32.210394752Z Found tar.gz based node_modules.
+2025-09-20T00:53:32.210420724Z Removing existing modules directory from root...
+2025-09-20T00:53:32.210432525Z Extracting modules...
+2025-09-20T00:53:41.555627109Z Done.
+2025-09-20T00:53:43.972526549Z npm info using npm@10.9.2
+2025-09-20T00:53:43.972556420Z npm info using node@v20.19.3
+2025-09-20T00:53:49.667206180Z 
+2025-09-20T00:53:49.667240824Z > historicos@1.0.0 start
+2025-09-20T00:53:49.667246973Z > node server.js
+2025-09-20T00:53:49.667251652Z 
+2025-09-20T00:53:50.215545657Z [dotenv@17.2.2] injecting env (2) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-09-20T00:53:50.215576045Z DB_PASSWORD length: 24
+2025-09-20T00:53:52.374358623Z Database configuration: {
+2025-09-20T00:53:52.374506602Z   "user": "sailpointbr-admin",
+2025-09-20T00:53:52.374512817Z   "server": "sailpointbr-sqlserver.database.windows.net",
+2025-09-20T00:53:52.374517596Z   "database": "sailpointbr-sqldb",
+2025-09-20T00:53:52.374522203Z   "options": {
+2025-09-20T00:53:52.374526488Z     "encrypt": true,
+2025-09-20T00:53:52.374530881Z     "trustServerCertificate": false
+2025-09-20T00:53:52.374535221Z   }
+2025-09-20T00:53:52.374539514Z }
+2025-09-20T00:53:52.843010500Z Connected to SQL Server
+2025-09-20T00:53:52.843029826Z Backend server listening at http://localhost:3000
+
+2025-09-20T00:58:39.419347999Z    _____                               
+2025-09-20T00:58:39.419417465Z   /  _  \ __________ _________   ____  
+2025-09-20T00:58:39.419422550Z  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2025-09-20T00:58:39.419426697Z /    |    \/    /|  |  /|  | \/\  ___/ 
+2025-09-20T00:58:39.419430104Z \____|__  /_____ \____/ |__|    \___  >
+2025-09-20T00:58:39.419433732Z         \/      \/                  \/ 
+2025-09-20T00:58:39.419437337Z A P P   S E R V I C E   O N   L I N U X
+2025-09-20T00:58:39.419440614Z 
+2025-09-20T00:58:39.419458467Z Documentation: http://aka.ms/webapp-linux
+2025-09-20T00:58:39.419462291Z NodeJS quickstart: https://aka.ms/node-qs
+2025-09-20T00:58:39.419465688Z NodeJS Version : v20.19.3
+2025-09-20T00:58:39.419468937Z Note: Any data outside '/home' is not persisted
+2025-09-20T00:58:39.419472208Z 
+2025-09-20T00:58:42.579298703Z Starting OpenBSD Secure Shell server: sshd.
+2025-09-20T00:58:42.601022550Z WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2025-09-20T00:58:42.673710370Z Updating certificates in /etc/ssl/certs...
+2025-09-20T00:58:57.141379226Z rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2025-09-20T00:58:57.203317204Z 4 added, 0 removed; done.
+2025-09-20T00:58:57.210036237Z Running hooks in /etc/ca-certificates/update.d...
+2025-09-20T00:58:57.220795668Z done.
+2025-09-20T00:58:57.242712889Z CA certificates copied and updated successfully.
+2025-09-20T00:58:57.441339178Z Starting periodic command scheduler: cron.
+2025-09-20T00:58:57.765751732Z Found build manifest file at '/home/site/wwwroot/oryx-manifest.toml'. Deserializing it...
+2025-09-20T00:58:57.776263345Z Could not find operation ID in manifest. Generating an operation id...
+2025-09-20T00:58:57.813092405Z Build Operation ID: 05dc0783-fd03-44fd-bbea-737f37ffe1b7
+2025-09-20T00:58:58.121256476Z Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2025-09-20T00:58:58.182098729Z Writing output script to '/opt/startup/startup.sh'
+2025-09-20T00:58:58.281391006Z Running #!/bin/sh
+2025-09-20T00:58:58.281431280Z 
+2025-09-20T00:58:58.281435855Z # Enter the source directory to make sure the script runs where the user expects
+2025-09-20T00:58:58.281439265Z cd "/home/site/wwwroot"
+2025-09-20T00:58:58.281442367Z 
+2025-09-20T00:58:58.281445222Z export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2025-09-20T00:58:58.281448217Z if [ -z "$PORT" ]; then
+2025-09-20T00:58:58.281451471Z 		export PORT=8080
+2025-09-20T00:58:58.281454952Z fi
+2025-09-20T00:58:58.281457849Z 
+2025-09-20T00:58:58.281460750Z echo Found tar.gz based node_modules.
+2025-09-20T00:58:58.281479413Z extractionCommand="tar -xzf node_modules.tar.gz -C /node_modules"
+2025-09-20T00:58:58.281482972Z echo "Removing existing modules directory from root..."
+2025-09-20T00:58:58.281486048Z rm -fr /node_modules
+2025-09-20T00:58:58.281488959Z mkdir -p /node_modules
+2025-09-20T00:58:58.281491885Z echo Extracting modules...
+2025-09-20T00:58:58.281494872Z $extractionCommand
+2025-09-20T00:58:58.282835039Z export NODE_PATH="/node_modules":$NODE_PATH
+2025-09-20T00:58:58.300176178Z export PATH=/node_modules/.bin:$PATH
+2025-09-20T00:58:58.300196191Z if [ -d node_modules ]; then
+2025-09-20T00:58:58.300200292Z     mv -f node_modules _del_node_modules || true
+2025-09-20T00:58:58.300203598Z fi
+2025-09-20T00:58:58.300206920Z 
+2025-09-20T00:58:58.300210186Z if [ -d /node_modules ]; then
+2025-09-20T00:58:58.300213398Z     ln -sfn /node_modules ./node_modules 
+2025-09-20T00:58:58.300216871Z fi
+2025-09-20T00:58:58.300219931Z 
+2025-09-20T00:58:58.300222960Z echo "Done."
+2025-09-20T00:58:58.300226220Z npm start
+2025-09-20T00:58:58.309949819Z Found tar.gz based node_modules.
+2025-09-20T00:58:58.322070121Z Removing existing modules directory from root...
+2025-09-20T00:58:58.339547563Z Extracting modules...
+2025-09-20T00:59:06.368049306Z Done.
+2025-09-20T00:59:09.695292357Z npm info using npm@10.9.2
+2025-09-20T00:59:09.697422253Z npm info using node@v20.19.3
+2025-09-20T00:59:14.218221001Z 
+2025-09-20T00:59:14.218258430Z > historicos@1.0.0 start
+2025-09-20T00:59:14.218264311Z > node server.js
+2025-09-20T00:59:14.218269233Z 
+2025-09-20T00:59:14.765671812Z [dotenv@17.2.2] injecting env (2) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+2025-09-20T00:59:14.775753895Z DB_PASSWORD length: 24
+2025-09-20T00:59:16.654086432Z Database configuration: {
+2025-09-20T00:59:16.654119399Z   "user": "sailpointbr-admin",
+2025-09-20T00:59:16.654125529Z   "server": "sailpointbr-sqlserver.database.windows.net",
+2025-09-20T00:59:16.654130311Z   "database": "sailpointbr-sqldb",
+2025-09-20T00:59:16.654522611Z   "options": {
+2025-09-20T00:59:16.654530388Z     "encrypt": true,
+2025-09-20T00:59:16.654534837Z     "trustServerCertificate": false
+2025-09-20T00:59:16.654539317Z   }
+2025-09-20T00:59:16.654543508Z }
+2025-09-20T00:59:17.230443469Z Connected to SQL Server
+2025-09-20T00:59:17.230475102Z Backend server listening at http://localhost:3000
+
+2025-09-20T01:06:31.911407402Z    _____                               
+2025-09-20T01:06:31.911475242Z   /  _  \ __________ _________   ____  
+2025-09-20T01:06:31.911480743Z  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2025-09-20T01:06:31.911484457Z /    |    \/    /|  |  /|  | \/\  ___/ 
+2025-09-20T01:06:31.911487940Z \____|__  /_____ \____/ |__|    \___  >
+2025-09-20T01:06:31.911491688Z         \/      \/                  \/ 
+2025-09-20T01:06:31.911494997Z A P P   S E R V I C E   O N   L I N U X
+2025-09-20T01:06:31.911498391Z 
+2025-09-20T01:06:31.911501548Z Documentation: http://aka.ms/webapp-linux
+2025-09-20T01:06:31.911504744Z NodeJS quickstart: https://aka.ms/node-qs
+2025-09-20T01:06:31.911507878Z NodeJS Version : v20.19.3
+2025-09-20T01:06:31.911511034Z Note: Any data outside '/home' is not persisted
+2025-09-20T01:06:31.911514354Z 
+2025-09-20T01:06:35.363900939Z Starting OpenBSD Secure Shell server: sshd.
+2025-09-20T01:06:35.385728115Z WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2025-09-20T01:06:35.433653599Z Updating certificates in /etc/ssl/certs...
+2025-09-20T01:06:48.668685155Z rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2025-09-20T01:06:48.728849156Z 4 added, 0 removed; done.
+2025-09-20T01:06:48.729997293Z Running hooks in /etc/ca-certificates/update.d...
+2025-09-20T01:06:48.749184414Z done.
+2025-09-20T01:06:48.771781514Z CA certificates copied and updated successfully.
+2025-09-20T01:06:49.028000177Z Starting periodic command scheduler: cron.
+2025-09-20T01:06:49.323984696Z Found build manifest file at '/home/site/wwwroot/oryx-manifest.toml'. Deserializing it...
+2025-09-20T01:06:49.333724536Z Could not find operation ID in manifest. Generating an operation id...
+2025-09-20T01:06:49.334517656Z Build Operation ID: 959aabc2-864e-4f9f-bb2c-9322575e32f5
+2025-09-20T01:06:49.915603686Z Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2025-09-20T01:06:49.943860021Z Writing output script to '/opt/startup/startup.sh'
+2025-09-20T01:06:50.043393568Z Running #!/bin/sh
+2025-09-20T01:06:50.043423551Z 
+2025-09-20T01:06:50.043429104Z # Enter the source directory to make sure the script runs where the user expects
+2025-09-20T01:06:50.043433664Z cd "/home/site/wwwroot"
+2025-09-20T01:06:50.043438108Z 
+2025-09-20T01:06:50.043442545Z export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2025-09-20T01:06:50.043447210Z if [ -z "$PORT" ]; then
+2025-09-20T01:06:50.043451614Z 		export PORT=8080
+2025-09-20T01:06:50.043456184Z fi
+2025-09-20T01:06:50.043473595Z 
+2025-09-20T01:06:50.043478539Z echo Found tar.gz based node_modules.
+2025-09-20T01:06:50.043496027Z extractionCommand="tar -xzf node_modules.tar.gz -C /node_modules"
+2025-09-20T01:06:50.043499829Z echo "Removing existing modules directory from root..."
+2025-09-20T01:06:50.043503142Z rm -fr /node_modules
+2025-09-20T01:06:50.043506255Z mkdir -p /node_modules
+2025-09-20T01:06:50.043509343Z echo Extracting modules...
+2025-09-20T01:06:50.043512518Z $extractionCommand
+2025-09-20T01:06:50.043515596Z export NODE_PATH="/node_modules":$NODE_PATH
+2025-09-20T01:06:50.043518885Z export PATH=/node_modules/.bin:$PATH
+2025-09-20T01:06:50.043522025Z if [ -d node_modules ]; then
+2025-09-20T01:06:50.043525232Z     mv -f node_modules _del_node_modules || true
+2025-09-20T01:06:50.043528427Z fi
+2025-09-20T01:06:50.043531415Z 
+2025-09-20T01:06:50.043534389Z if [ -d /node_modules ]; then
+2025-09-20T01:06:50.043537612Z     ln -sfn /node_modules ./node_modules 
+2025-09-20T01:06:50.043557430Z fi
+2025-09-20T01:06:50.043560981Z 
+2025-09-20T01:06:50.043563994Z echo "Done."
+2025-09-20T01:06:50.043567127Z npm start
+2025-09-20T01:06:50.043570261Z Found tar.gz based node_modules.
+2025-09-20T01:06:50.043573424Z Removing existing modules directory from root...
+2025-09-20T01:06:50.043576603Z Extracting modules...
+2025-09-20T01:06:57.440495679Z Done.
+2025-09-20T01:06:59.342219584Z npm info using npm@10.9.2
+2025-09-20T01:06:59.343964098Z npm info using node@v20.19.3
+2025-09-20T01:07:04.367028688Z 
+2025-09-20T01:07:04.367089436Z > historicos@1.0.0 start
+2025-09-20T01:07:04.367096183Z > node server.js
+2025-09-20T01:07:04.367101467Z 
+2025-09-20T01:07:04.832684142Z [dotenv@17.2.2] injecting env (2) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2025-09-20T01:07:04.832747119Z DB_PASSWORD length: 24
+2025-09-20T01:07:07.731790367Z Database configuration: {
+2025-09-20T01:07:07.731842722Z   "user": "sailpointbr-admin",
+2025-09-20T01:07:07.731849135Z   "server": "sailpointbr-sqlserver.database.windows.net",
+2025-09-20T01:07:07.731853915Z   "database": "sailpointbr-sqldb",
+2025-09-20T01:07:07.731858488Z   "options": {
+2025-09-20T01:07:07.731862964Z     "encrypt": true,
+2025-09-20T01:07:07.731867443Z     "trustServerCertificate": false
+2025-09-20T01:07:07.731872005Z   }
+2025-09-20T01:07:07.731876178Z }
+2025-09-20T01:07:08.991335720Z Connected to SQL Server
+2025-09-20T01:07:08.991369505Z Backend server listening at http://localhost:3000
+
+2025-09-20T01:25:59.242691235Z    _____                               
+2025-09-20T01:25:59.242781901Z   /  _  \ __________ _________   ____  
+2025-09-20T01:25:59.242786379Z  /  /_\  \\___   /  |  \_  __ \_/ __ \ 
+2025-09-20T01:25:59.242789838Z /    |    \/    /|  |  /|  | \/\  ___/ 
+2025-09-20T01:25:59.242793237Z \____|__  /_____ \____/ |__|    \___  >
+2025-09-20T01:25:59.242796760Z         \/      \/                  \/ 
+2025-09-20T01:25:59.242800048Z A P P   S E R V I C E   O N   L I N U X
+2025-09-20T01:25:59.242803133Z 
+2025-09-20T01:25:59.242806056Z Documentation: http://aka.ms/webapp-linux
+2025-09-20T01:25:59.242808996Z NodeJS quickstart: https://aka.ms/node-qs
+2025-09-20T01:25:59.242811939Z NodeJS Version : v20.19.3
+2025-09-20T01:25:59.242814894Z Note: Any data outside '/home' is not persisted
+2025-09-20T01:25:59.242824475Z 
+2025-09-20T01:26:08.725686109Z Starting OpenBSD Secure Shell server: sshd.
+2025-09-20T01:26:08.753736974Z WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2025-09-20T01:26:08.815655053Z Updating certificates in /etc/ssl/certs...
+2025-09-20T01:26:22.721593186Z rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+2025-09-20T01:26:22.798993349Z 4 added, 0 removed; done.
+2025-09-20T01:26:22.799026696Z Running hooks in /etc/ca-certificates/update.d...
+2025-09-20T01:26:22.807697090Z done.
+2025-09-20T01:26:22.828992161Z CA certificates copied and updated successfully.
+2025-09-20T01:26:23.030480038Z Starting periodic command scheduler: cron.
+2025-09-20T01:26:23.450428685Z Found build manifest file at '/home/site/wwwroot/oryx-manifest.toml'. Deserializing it...
+2025-09-20T01:26:23.458122895Z Could not find operation ID in manifest. Generating an operation id...
+2025-09-20T01:26:23.458612374Z Build Operation ID: dfc389f8-d65a-4b82-9c51-60a1a8d1fbc1
+2025-09-20T01:26:23.859161649Z Environment Variables for Application Insight's IPA Codeless Configuration exists..
+2025-09-20T01:26:23.872056152Z Writing output script to '/opt/startup/startup.sh'
+2025-09-20T01:26:23.990832664Z Running #!/bin/sh
+2025-09-20T01:26:23.990859686Z 
+2025-09-20T01:26:23.990865117Z # Enter the source directory to make sure the script runs where the user expects
+2025-09-20T01:26:23.990870160Z cd "/home/site/wwwroot"
+2025-09-20T01:26:23.990874843Z 
+2025-09-20T01:26:23.990879282Z export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+2025-09-20T01:26:23.990883730Z if [ -z "$PORT" ]; then
+2025-09-20T01:26:23.990888132Z 		export PORT=8080
+2025-09-20T01:26:23.990892656Z fi
+2025-09-20T01:26:23.990896877Z 
+2025-09-20T01:26:23.990901091Z echo Found tar.gz based node_modules.
+2025-09-20T01:26:23.990918006Z extractionCommand="tar -xzf node_modules.tar.gz -C /node_modules"
+2025-09-20T01:26:23.990921991Z echo "Removing existing modules directory from root..."
+2025-09-20T01:26:23.990925293Z rm -fr /node_modules
+2025-09-20T01:26:23.990928421Z mkdir -p /node_modules
+2025-09-20T01:26:23.990931597Z echo Extracting modules...
+2025-09-20T01:26:23.990934718Z $extractionCommand
+2025-09-20T01:26:23.990937814Z export NODE_PATH="/node_modules":$NODE_PATH
+2025-09-20T01:26:23.990941140Z export PATH=/node_modules/.bin:$PATH
+2025-09-20T01:26:23.990944348Z if [ -d node_modules ]; then
+2025-09-20T01:26:23.990947479Z     mv -f node_modules _del_node_modules || true
+2025-09-20T01:26:23.990950668Z fi
+2025-09-20T01:26:23.990953754Z 
+2025-09-20T01:26:23.990956759Z if [ -d /node_modules ]; then
+2025-09-20T01:26:23.990959893Z     ln -sfn /node_modules ./node_modules 
+2025-09-20T01:26:23.990963064Z fi
+2025-09-20T01:26:23.990966167Z 
+2025-09-20T01:26:23.990969217Z echo "Done."
+2025-09-20T01:26:23.990972386Z npm start
+2025-09-20T01:26:24.035990013Z Found tar.gz based node_modules.
+2025-09-20T01:26:24.036700711Z Removing existing modules directory from root...
+2025-09-20T01:26:24.036714220Z Extracting modules...
+2025-09-20T01:26:36.095762394Z Done.
+2025-09-20T01:26:38.362125992Z npm info using npm@10.9.2
+2025-09-20T01:26:38.362164802Z npm info using node@v20.19.3
+2025-09-20T01:26:41.720833234Z 
+2025-09-20T01:26:41.720865285Z > historicos@1.0.0 start
+2025-09-20T01:26:41.720870840Z > node server.js
+2025-09-20T01:26:41.720875358Z 
+2025-09-20T01:26:42.122153009Z [dotenv@17.2.2] injecting env (2) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+2025-09-20T01:26:42.125357870Z DB_PASSWORD length: 24
+2025-09-20T01:26:43.729834800Z Database configuration: {
+2025-09-20T01:26:43.729869694Z   "user": "sailpointbr-admin",
+2025-09-20T01:26:43.729875506Z   "server": "sailpointbr-sqlserver.database.windows.net",
+2025-09-20T01:26:43.729880242Z   "database": "sailpointbr-sqldb",
+2025-09-20T01:26:43.729884822Z   "options": {
+2025-09-20T01:26:43.729889129Z     "encrypt": true,
+2025-09-20T01:26:43.729893785Z     "trustServerCertificate": false
+2025-09-20T01:26:43.729905060Z   }
+2025-09-20T01:26:43.729909772Z }
+2025-09-20T01:26:44.291703616Z Connected to SQL Server
+2025-09-20T01:26:44.291755462Z Backend server listening at http://localhost:3000
+

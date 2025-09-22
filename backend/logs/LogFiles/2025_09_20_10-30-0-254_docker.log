@@ -1,0 +1,7 @@
+2025-09-20T00:28:48.0711558Z Container is terminating. Grace period: 5 seconds.
+2025-09-20T00:28:48.2171918Z Stop and delete container. Retry count = 0
+2025-09-20T00:28:48.2244643Z Stopping container: 5e967d76e65f_iga-historicos.
+2025-09-20T00:28:53.1831978Z Deleting container: 5e967d76e65f_iga-historicos. Retry count = 0
+2025-09-20T00:28:53.2797323Z Container spec TerminationMessagePolicy  path 
+2025-09-20T00:28:53.2799193Z Container is terminated. Total time elapsed: 5204 ms.
+2025-09-20T00:28:53.2989644Z Site: iga-historicos stopped.

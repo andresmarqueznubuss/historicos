@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistema de Reportes{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}?v={{ now_timestamp() }}">
+    <style>
+        #loading-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 14, 26, 0.95); backdrop-filter: blur(5px);
+            display: none; justify-content: center; align-items: center;
+            z-index: 9999; color: #d4a017;
+        }
+        .theme-switch-wrapper { display: flex; align-items: center; margin-left: 15px; }
+        .theme-switch { display: inline-block; height: 24px; position: relative; width: 50px; }
+        .theme-switch input { display:none; }
+        .slider { background-color: #333; bottom: 0; cursor: pointer; left: 0; position: absolute; right: 0; top: 0; transition: .4s; border-radius: 24px; }
+        .slider:before { background-color: #fff; bottom: 4px; content: ""; height: 16px; left: 4px; position: absolute; transition: .4s; width: 16px; border-radius: 50%; }
+        input:checked + .slider { background-color: var(--primary-color); }
+        input:checked + .slider:before { transform: translateX(26px); }
+        .theme-switch-wrapper i { margin: 0 8px; color: var(--primary-color); }
+    </style>
+</head>
+<body class="{% block body_class %}{% endblock %}">
+    {% if 'saml_user_id' in session %}
+    <header class="fixed-top-glass">
+        <nav class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="{{ url_for('igarep_bp.index') }}">
+                <img src="{{ url_for('static', filename='logo_banrep.png') }}" alt="Logo Banco de la República" class="app-logo">
+                <span class="d-none d-md-inline">Sistema de Reportes</span>
+            </a>
+            <div class="header-nav d-flex align-items-center">
+                <a class="btn btn-sm btn-outline-primary mx-1" href="{{ url_for('igarep_bp.realtime_report_viewer') }}">Tiempo Real</a>
+                <a class="btn btn-sm btn-outline-primary mx-1" href="{{ url_for('igarep_bp.show_historical_reports') }}">Históricos</a>
+                <span class="nav-user mx-3 text-muted d-none d-lg-inline">
+                    Usuario: <strong>{{ session.get('username', 'Desconocido') }}</strong>
+                </span>
+                <a href="{{ url_for('igarep_bp.saml_logout') }}" class="btn btn-sm btn-outline-danger">Cerrar Sesión</a>
+                <div class="theme-switch-wrapper">
+                    <i class="fas fa-moon"></i>
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                    <i class="fas fa-sun"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    {% endif %}
+    
+    <div class="main-container">
+        <div class="content-wrapper">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    
+    <div id="loading-overlay">
+        <div class="spinner-border text-warning" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Cargando...</span>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('form');
+            const links = document.querySelectorAll('a.btn');
+            const loadingOverlay = document.getElementById('loading-overlay');
+
+            const showLoading = () => { if(loadingOverlay) loadingOverlay.style.display = 'flex'; };
+            const hideLoading = () => { if(loadingOverlay) loadingOverlay.style.display = 'none'; };
+
+            forms.forEach(form => {
+                form.addEventListener('submit', showLoading);
+            });
+
+            links.forEach(link => {
+                const isDownloadLink = link.href && (link.href.includes('/download/') || link.hasAttribute('download'));
+                if (isDownloadLink) {
+                    link.addEventListener('click', () => {
+                        showLoading();
+                        setTimeout(hideLoading, 4000);
+                    });
+                } else if (link.href && !link.href.startsWith('#') && link.target !== '_blank') {
+                    link.addEventListener('click', (e) => {
+                        if (!e.defaultPrevented) showLoading();
+                    });
+                }
+            });
+
+            // Lógica para el interruptor de tema
+            const themeSwitch = document.getElementById('checkbox');
+            if(themeSwitch) {
+                const currentTheme = localStorage.getItem('theme') || 'dark';
+                document.body.setAttribute('data-theme', currentTheme);
+                themeSwitch.checked = currentTheme === 'light';
+                themeSwitch.addEventListener('change', e => {
+                    const newTheme = e.target.checked ? 'light' : 'dark';
+                    document.body.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                });
+            }
+        });
+    </script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

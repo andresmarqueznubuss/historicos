@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Status</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        h1 { color: #333; }
+        h2 { color: #555; }
+        .endpoint { border: 1px solid #ccc; padding: 1em; margin-bottom: 1em; border-radius: 5px; }
+        .endpoint a { text-decoration: none; color: #007bff; }
+        .endpoint a:hover { text-decoration: underline; }
+        form { margin-top: 1em; }
+        label { display: block; margin-bottom: 0.5em; }
+        input, select { width: 100%; padding: 0.5em; margin-bottom: 1em; box-sizing: border-box; }
+        button { padding: 0.7em 1.5em; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        #response { margin-top: 1em; padding: 1em; border: 1px solid #eee; background-color: #f9f9f9; white-space: pre-wrap; word-wrap: break-word; }
+    </style>
+</head>
+<body>
+    <h1>Backend de Reportes Históricos</h1>
+    <p>El servidor está funcionando correctamente.</p>
+
+    <h2>Endpoints de la API</h2>
+
+    <div class="endpoint">
+        <h3>GET /api/reports</h3>
+        <p>Un endpoint básico para verificar la conexión con la base de datos.</p>
+        <a href="/api/reports" target="_blank">/api/reports</a>
+    </div>
+
+    <div class="endpoint">
+        <h3>GET /api/report-data/:executionId</h3>
+        <p>Obtiene los datos de un reporte específico por su ID de ejecución.</p>
+        <form id="reportDataForm">
+            <label for="executionId">Execution ID:</label>
+            <input type="text" id="executionId" name="executionId" placeholder="Ej: 123">
+            <button type="submit">Obtener Datos</button>
+        </form>
+    </div>
+
+    <div class="endpoint">
+        <h3>GET /api/report-dates</h3>
+        <p>Obtiene las fechas de ejecución de los reportes según los parámetros.</p>
+        <form id="reportDatesForm">
+            <label for="entidad">Entidad:</label>
+            <input type="text" id="entidad" name="entidad" placeholder="Ej: BANCO DE LA REPUBLICA">
+            <label for="reporte">Reporte:</label>
+            <input type="text" id="reporte" name="reporte" placeholder="Ej: Reporte general canales y usuarios">
+            <label for="ambiente">Ambiente:</label>
+            <input type="text" id="ambiente" name="ambiente" placeholder="Ej: Produccion">
+            <button type="submit">Obtener Fechas</button>
+        </form>
+    </div>
+
+    <h2>Respuesta</h2>
+    <pre id="response"></pre>
+
+    <script>
+        document.getElementById('reportDataForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const executionId = document.getElementById('executionId').value;
+            fetch(`/api/report-data/${executionId}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('response').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById('response').textContent = 'Error: ' + error;
+                });
+        });
+
+        document.getElementById('reportDatesForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const entidad = document.getElementById('entidad').value;
+            const reporte = document.getElementById('reporte').value;
+            const ambiente = document.getElementById('ambiente').value;
+            fetch(`/api/report-dates?entidad=${entidad}&reporte=${reporte}&ambiente=${ambiente}`)
+                .then(response => response.json())
+                .then(data => {
+                    const limitedData = data.slice(0, 50); // Limit to 50 records
+                    document.getElementById('response').textContent = JSON.stringify(limitedData, null, 2);
+                })
+                .catch(error => {
+                    document.getElementById('response').textContent = 'Error: ' + error;
+                });
+        });
+    </script>
+
+</body>
+</html>
