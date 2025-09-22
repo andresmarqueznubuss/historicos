@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Configuration ---
+    const backendApiUrl = 'https://backend-historicos.vercel.app/api';
+    const logoUrl = 'https://d1b4gd4m8561gs.cloudfront.net/sites/default/files/inline-images/brc-principal_1.png';
+
     // --- State Variables ---
     let currentUser;
     let allUsers = [];
@@ -154,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const reportNameForQuery = selectedReport;
         const entidadForQuery = userOrganization;
 
-        const url = `https://backend-historicos.vercel.app/api/report-dates?entidad=${encodeURIComponent(entidadForQuery)}&reporte=${encodeURIComponent(reportNameForQuery)}&ambiente=${encodeURIComponent(selectedEnv)}`;
+        const url = `${backendApiUrl}/report-dates?entidad=${encodeURIComponent(entidadForQuery)}&reporte=${encodeURIComponent(reportNameForQuery)}&ambiente=${encodeURIComponent(selectedEnv)}`;
 
         try {
             const response = await fetch(url);
@@ -205,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
         reportResultsDiv.innerHTML = ''; // Clear previous results
 
         try {
-            const response = await fetch(`https://backend-historicos.vercel.app/api/report-data/${selectedExecutionId}`, { signal });
+            const response = await fetch(`${backendApiUrl}/report-data/${selectedExecutionId}`, { signal });
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -329,7 +333,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const { jsPDF } = window.jspdf;
 
         // Fetch logo and convert to base64
-        const logoUrl = 'https://d1b4gd4m8561gs.cloudfront.net/sites/default/files/inline-images/brc-principal_1.png';
         let logoBase64 = '';
         try {
             const response = await fetch(logoUrl);
